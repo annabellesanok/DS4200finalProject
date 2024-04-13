@@ -32,9 +32,9 @@ h2 {
 /* Styling for visualization containers */
 #static-visualizations div, #interactive-visualizations div {
     display: flex;
-    flex-direction: column; /* Ensure elements are stacked vertically */
-    align-items: center; /* Center-align child elements */
-    justify-content: center; /* Center vertically if needed */
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
     margin-bottom: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -44,34 +44,32 @@ h2 {
 figure {
     margin: 0;
     width: 100%; /* Ensure figure takes full width */
-    text-align: center; /* Center content within the figure */
+    text-align: center; 
 }
 
 figure img {
-    max-width: 100%; /* Make image responsive */
+    max-width: 100%; 
     height: auto;
-    display: inline-block; /* Align images better within center text context */
+    display: inline-block;
 }
 
 figcaption {
     font-size: 0.9em;
     color: #666;
-    text-align: center; /* Center-align the caption text */
+    text-align: center; 
 }
 
 figcaption, p {
-    width: 100%; /* Full width for better alignment */
-    text-align: center; /* Center-align descriptions */
-    margin-top: 20px; /* Add space between image and description */
+    width: 100%; 
+    text-align: center; 
+    margin-top: 20px; 
 }
 
-/* Responsive iframe containers */
 iframe {
-    height: 510px; /* Adjust height as necessary */
-    width: 100%; /* Full width */
+    height: 510px; 
+    width: 100%; 
 }
 
-/* Styling for summary and references sections */
 #summary, #references {
     background-color: #fff;
     padding: 20px;
