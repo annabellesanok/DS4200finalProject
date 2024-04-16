@@ -6,6 +6,7 @@
     <title>Visual Analysis of Tech Companies</title>
     <link rel="stylesheet" href="style.css"> 
     <script src='https://d3js.org/d3.v7.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-tip"></script>
 </head>
 <body>
     <header>
@@ -18,19 +19,19 @@
 
             The deadline for final project is on April 19th. Each group need to present the HTML/CSS/JS file for the webpage you have designed. You need to setup a Github project webpage for your project work and eventually publish it. On the website, you need to include:
             
-            •An overall introduction to your project, including the topic and tasks. (5 pts)
+            <br>•An overall introduction to your project, including the topic and tasks. (5 pts)
             
-            •At least one data visualization for the overall data with clear title, labels, legend(if need) and a paragraph to introduce the data, including the size, source and attributes. (10 pts)
+            <br>•At least one data visualization for the overall data with clear title, labels, legend(if need) and a paragraph to introduce the data, including the size, source and attributes. (10 pts)
             
-            •At least two links to the references. (5 pts)
+            <br>•At least two links to the references. (5 pts)
             
-            •At least three static data visualization, each with clear title, labels, legend(if need) and a paragraph to explain the takeaway of the visualization. (30 pts)
+            <br>•At least three static data visualization, each with clear title, labels, legend(if need) and a paragraph to explain the takeaway of the visualization. (30 pts)
             
-            •At least two interactive data visualization, each with clear title, labels, legend(if need) and a paragraph to explain how to interact with the visualization.(30 pts)
+            <br>•At least two interactive data visualization, each with clear title, labels, legend(if need) and a paragraph to explain how to interact with the visualization.(30 pts)
             
-            •A summary for your findings, including what you have learned from the data visualization and what can be done in the future. (15 pts)
+            <br>•A summary for your findings, including what you have learned from the data visualization and what can be done in the future. (15 pts)
             
-            * Format, including correctly publish the website, no grammar error and keep the webpage tidy and clear.(5 pts)
+            <br>* Format, including correctly publish the website, no grammar error and keep the webpage tidy and clear.(5 pts)
             
             </p>
     </section>
@@ -48,22 +49,30 @@
     
     <section id="overall-data">
         <h2>Overall Data Visualization</h2>
-        <figure>
-            <img src="path/to/your/overall-data-visualization.png" alt="Overall Data Visualization">
-            <figcaption>add in overall visualization</figcaption>
-        </figure>
-        <p>Description of the data, including size, source, and attributes. Explain what the visualization shows.</p>
+        <iframe src="overallVis.html" style="width: 1000px; height: 510px;" frameborder="0" title="Interactive Line Chart"></iframe>
+        <p>
+            Our project explores fundamental financial data for selected healthcare and technology stocks within the S&P 500, spanning from 2009 to 2023. Our dataset offers an extensive range of metrics, including closing price, volume, net earnings per share (EPS), sales per share, and price-to-earnings (PE) ratio, across 33 different financial indicators. Each stock's data points, recorded approximately five times per month, result in approximately 2,500 rows per stock. <br> <br>
+            
+            Our data includes prominent companies in the healthcare sector such as AbbVie (ABBV), Abbott Laboratories (ABT), AstraZeneca (AZN), Bristol-Myers (BMY), Danaher (DHR), Johnson & Johnson (JNJ), Eli Lilly (LLY), Merck (MRK), and Pfizer (PFE). The technology segment is represented by tech companies like Apple (AAPL), Broadcom (AVGO), Cisco Systems (CSCO), Alphabet (GOOGL), Microsoft (MSFT), Nvidia (NVDA), and Oracle (ORCL). <br> <br>
+            
+            Initially, we ingested data from multiple CSV files into individual dataframes, while also appending a new column labeled 'Industry' to categorize each entry into Healthcare and Tech. Then we grouped each financial metric by quarter to average the values. Finally, we merged these dataframes into a single comprehensive dataframe, which we used to create our visualizations. <br> <br>
+            
+            The visualization above showcases the trajectory of closing prices over time for each ticker within each industry. It reveals the growth patterns and trends of individual companies, and also provides a comparative insight into the industry’s dynamics over the years. Through our line chart, it becomes evident that while some stocks have shown consistent upward momentum, others display more volatile trajectories. The distinct color coding for each ticker allows for clearer comparison across the different companies, and the interactive dropdown allows the user to toggle between industries. The closing prices of healthcare companies, as shown in the visualization, depict the impact of market conditions, company performance, and sector-specific events on stock valuations over the period.</p>
     </section>
 
     <section id="static-visualizations">
         <h2>Static Data Visualizations</h2>
 
         <div id="static1-container">
-            <figure>
                 <h3>Boxplot</h3>
-                <img src="boxplot.png" alt="Boxplot Visualization">
-            </figure>
-            <p>This boxplot illustrates a comparison between the healthcare and tech industries. It is observed that tech stocks exhibit a greater variability in debt levels, as indicated by the wider spread of data points. This contrasts with the healthcare sector, which shows a more compact interquartile range, suggesting less variance among companies.  Healthcare stocks, it appears, can sustain higher debt loads relative to equity, likely due to the constant demand for healthcare services and pharmaceuticals, which in turn allows for more predictable cash flows. This predictability is beneficial for managing and paying down debt. The outliers in the tech sector suggest that while most tech companies maintain a certain range of debt-to-equity ratio, some significantly deviate from the norm.</p>
+                <iframe src="boxplot.html" style="width: 400px; height: 325px;" frameborder="0" title="Boxplot"></iframe>
+            <p>This boxplot provides a comparative analysis of debt-to-equity ratios across each of the industries. This metric is useful in understanding how companies leverage debt relative to their equity, which is a key indicator of their financial health and risk management strategy.<br><br>
+
+                In the healthcare industry, companies typically operate with consistent and predictable cash flows due to the constant demand for healthcare services and pharmaceutical products. This sector's boxplot showcases a more compact IQR, indicative of less variance in how these companies manage their debt levels. The stability of cash flows in this sector allows for healthcare companies to sustain higher debt loads. This provides them with a strategic advantage as it can be used to fund ongoing research, expansion, and operations without jeopardizing financial stability.<br><br>
+                
+                The tech industry exhibits a broader range of debt-to-equity ratios, as reflected by a wider spread of data points in the boxplot. This diversity is indicative of the varied business models and stages of growth within the tech sector. While a number of tech companies maintain moderate leverage, demonstrating a cautious approach to debt, there are outliers that deviate significantly from the norm. These outliers could represent aggressive growth strategies through debt financing or could signal companies encountering financial challenges.<br><br>
+                
+                The whiskers of the boxplot extend to capture the full range of values, but there are several outliers to note. In the case of tech companies, these outliers could be younger, high-growth companies investing heavily in innovation, or established firms diversifying through acquisitions — both scenarios where debt might temporarily outpace equity.  </p>
         </div>
         
         <div id="static2-container">
@@ -74,9 +83,15 @@
             <p>Description and key takeaways</p>
         </div>
 
-        <div id="scatterplot">
+        <div id="bubblechart">
             <h3>PE vs. PFCF Ratios</h3>
-            <p>Description and key takeaways.</p>
+            <p>This bubble chart was created using D3. Rather than comparing each of the industries as a whole, we decided to look into a few of the ratios within just tech companies to understand how they compare to one another. <br><br>
+
+                The horizontal axis represents the PE (price to earnings) ratio, which measures a company's current share price relative to its per-share earnings. A higher PE ratio may suggest that a company's stock is overvalued, or investors are expecting high growth rates in the future. The vertical axis shows the PFCF (price to free cash flow) ratio, indicating how much investors are willing to pay per dollar of free cash flow. Lower values typically signify better value. Each bubble's size reflects the company's ROE (return on equity), which measures how much profit a company generates with the money shareholders have invested. Larger bubbles denote higher ROE, suggesting more efficient use of equity. <br><br>
+                
+                NVDA (Nvidia) demonstrates a high PE ratio and a moderate PFCF ratio with a high ROE value. Nvidia’s high PE can be attributed to the market’s high expectations for growth, especially given its dominant position in the GPU market and its prospects in AI and deep learning industries. Its high ROE is indicative of effective management, which can justify the higher PE ratio. <br><br>
+                
+                A company like CSCO (Cisco Systems) shows moderate PE and lower PFCF ratios with moderate ROE bubble size. It is a mature technology company with a steady cash flow, so its valuation may not be as high as more growth-oriented tech firms. </p>
         </div>
     </section>
     
@@ -86,13 +101,28 @@
         <div id="interactive1-container">
             <h3>PE vs. EPS</h3>
             <iframe src="lineChart.html" style="width: 1000px; height: 510px;" frameborder="0" title="Interactive Line Chart"></iframe>
-            <p>Instructions on how to interact with the visualization and key takeaways.</p>
+            <p>This visualization reconciles investors’ expectations (price-to-earnings) with reality (earnings per share). In this case, the price-to-earnings ratio is supposed to gauge what investors think a stock/company will earn in the future, while the earnings-per-share is how much a company earned over the last year. <br> <br>
+
+                Increases in a stock’s PE ratio means that investors expect this company to do better in the future, while decreases in PE ratio reflects souring sentiment over a company’s prospects. A lot of the time, it can be observed that as a company’s EPS increased, PE increased as well, which shows that as a company earns more, investors update their beliefs about a company to reflect that its profitability is growing and will likely continue to grow in the future. <br> <br>
+                
+                However, the observed relationship is not always the case. There are many instances throughout the graphs where sharp increases or decreases in EPS seemed to have the opposite effect on PE. This is because investors are forward looking. Investors are able to parse when sharp increases or decreases in earnings are essentially one-time events. A one-time increase in EPS, for example, does not necessarily mean that this is the level of earnings that should be expected of the company in the future. EPS is not a perfect metric of pure, “steady-state” operating profitability, as it can be impacted by one-time tax breaks or interest payments. <br> <br>
+                
+                Overall, the relationship between PE and EPS is not straight-forward. Investors are forward looking, while PE and EPS ratios can only be captured after-the-fact (after investors have already updated their beliefs about a company and after a company releases its earnings). However, our graphs show that the two figures are at least somewhat correlated over a long-time horizon (10+ years), which captures the essence of investing (I.E. investors pay a premium (price) for a company’s current earnings in order to receive a greater return on their investment in the future through increased earnings).
+                </p>
         </div>
 
         <div id="interactive2-container">
             <h3>Stock Price vs. Profitability</h3>
             <iframe src="stackedBar.html" style="width: 1100px; height: 520px;" frameborder="0" title="Interactive Line Chart"></iframe>
-            <p>Instructions on how to interact with the visualization and key takeaways.</p>
+            <p>What moves a stock? <br> <br>
+                This visualization shows how stock prices respond to changes in a company’s profitability as measured by gross profit (profit after taking into account cost of making and delivering goods/services) and operating profit (profit after taking into account ALL expenses like rent and administrative expenses, but before tax or interest payments). As is expected, stock prices tended to rise as profitability rose. However, what was interesting to us is that the degree to which this happened varied between the healthcare and tech industries. <br> <br>
+                
+                Technology stocks like Apple (AAPL), Nvidia (NVDA), Broadcom (AVGO), Alphabet (GOOGL), etc. demonstrate consistent increases in stock price as profitability increased. On the other hand, this was not always the case for healthcare stocks, where stock prices for many companies such as Johnson and Johnson (JNJ) and Eli Lilly (LLY) among others managed to rise even without drastically different profitability profiles. <br> <br>
+                
+                We suspect this trend is because technology companies are much younger, and so investors are looking for profitability to prove that these companies’ business models are viable. In this case, achieving and expanding profitability is the primary way that these companies communicate to the market that they are worthy of long-term investments. It was almost always the case that as profitability rose, the prices of tech stocks rose in tandem. <br> <br>
+                
+                On the other hand, big healthcare companies tend to be much more mature, having been around for longer than their technology counterparts. A lot of them have already achieved healthy levels of profitability. For them, showing investors that they are worth investing in is mostly a matter of improving the pipeline of drugs they are developing or returning cash (profits) to shareholders through dividends or stock repurchase programs. The former can influence profitability but more importantly is an assurance that revenue can continue to grow or remain stable, while the latter is a matter of good corporate governance from the management of these 
+                </p>
         </div>
     </section>
     
@@ -104,13 +134,13 @@
     <section id="references">
         <h2>References</h2>
         <ul>
-            <li><a href="URL_TO_REFERENCE_1">Reference 1</a></li>
-            <li><a href="URL_TO_REFERENCE_2">Reference 2</a></li>
+            <li><a href="https://www.jstor.org/stable/248340">Abnormal Returns to a Fundamental Analysis Strategy</a></li>
+            <li><a href="https://www.jstor.org/stable/2491464">Fundamental Analysis, Future Earnings, and Stock Prices</a></li>
         </ul>
     </section>
     
     <footer>
-        <p>Project by [Your Name].</p>
+        <p>Project by Annabelle Sanok, Joshua Yu, Louis Chou</p>
     </footer>
     
     <script src='script.js'></script>   

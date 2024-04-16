@@ -56,12 +56,12 @@ figure img {
 figcaption {
     font-size: 0.9em;
     color: #666;
-    text-align: center; 
+    text-align: left;
 }
 
 figcaption, p {
     width: 100%; 
-    text-align: center; 
+    text-align: left; 
     margin-top: 20px; 
 }
 
@@ -94,4 +94,25 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Tooltip styling for D3 visualizations */
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 6px;
+    font-size: 12px;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Bubble styling for D3 bubble chart */
+.bubble {
+    stroke: #fff;
+    stroke-width: 1.5px;
+    fill-opacity: 0.7;
 }
